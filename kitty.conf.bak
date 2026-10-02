@@ -1,15 +1,45 @@
 dynamic_background_opacity true
+# background_opacity         0.75
 background_opacity         0.55
-font_size 16.0
+
+
+# enable_background_blur no
+# background_blur 0
+
+
+####### You have to change this in hyprland, not here
+# see $HOME/.config/hypr/hyprland.conf:205
+# https://wiki.hyprland.org/Configuring/Variables/#blur
+# blur {
+#     enabled = false
+#     size = 3
+#     passes = 0
+#     
+#     vibrancy = 0.1696
+# }
+
+
+
 confirm_os_window_close 2
 
+copy_on_select true
 
-shell fish
 
 
 tab_bar_style fade
 # Enable tab bar
 tab_bar_edge bottom
+
+map ctrl+shift+h noop
+# Cause this is annoying as fuck, for pc only, remove from laptop. 
+# Put it in machine unique hyprland
+# map XF86AudioLowerVolume noop
+# map XF86AudioRaiseVolume noop
+
+
+map ctrl+shift+x close_window
+
+
 
 # Display tab numbers
 tab_number_display always
@@ -29,6 +59,28 @@ tab_title_template {index}:{title}
 
 
 # BEGIN_KITTY_THEME
-# Tokyo Night
+# Default
 include current-theme.conf
 # END_KITTY_THEME
+
+shell zsh
+# shell /usr/bin/tmux
+# shell sh -c 'tmux || exec sh'
+
+
+# Remap Ctrl + V to send Ctrl + Q
+# map ctrl+v send_text all "\x11"  # Sends Ctrl + Q
+
+
+map ctrl+shift+n none
+
+
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="Noto Sans Mono"
+font_size 14.5
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
